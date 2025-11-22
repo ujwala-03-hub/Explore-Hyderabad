@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Hyd – Places</title>
+
+<style>
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family: Arial, sans-serif; background:#f2f6fa; color:#333;}
+
+  /* NAVBAR */
+  .navbar{
+    background:#005fa3;
+    padding:1rem 2rem;
+    display:flex; justify-content:space-between; align-items:center;
+    position:sticky; top:0; z-index:100;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
+  .navbar .logo{
+    font-size:1.7rem; 
+    font-weight:bold;
+    color:white;
+    letter-spacing:1px;
+  }
+  .nav-links{
+    list-style:none; display:flex; gap:1.2rem;
+  }
+  .nav-links a{
+    color:white; 
+    text-decoration:none; 
+    font-weight:bold; 
+    padding:8px 12px;
+    transition:0.3s;
+    border-radius:6px;
+  }
+  .nav-links a:hover{
+    background:white;
+    color:#005fa3;
+  }
+
+  /* HERO */
+  .hero{
+    background:url('https://upload.wikimedia.org/wikipedia/commons/e/e1/Charminar_south_west.jpg') center/cover no-repeat;
+    height:320px;
+    display:flex; justify-content:center; align-items:center;
+    color:white;
+    text-shadow:2px 2px 10px black;
+    font-size:2.2rem; 
+    font-weight:bold;
+    letter-spacing:1px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  @keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+  }
+
+  .container{
+    max-width:1200px;
+    margin:2rem auto;
+    padding:0 1rem;
+  }
+
+  /* SEARCH BOX */
+  .search-box{text-align:center; margin-bottom:1.5rem;}
+  .search-box input{
+    width:65%; padding:.9rem;
+    border-radius:10px;
+    border:1px solid #ccc; 
+    font-size:1rem;
+    outline:none;
+    transition:0.3s;
+  }
+  .search-box input:focus{
+    border-color:#0077cc; 
+    box-shadow:0 0 5px rgba(0,123,255,0.5);
+  }
+  @media(max-width:700px){
+    .search-box input{width:90%;}
+  }
+
+  /* CARDS */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(270px, 1fr));
+    gap:1.5rem;
+  }
+  .card{
+    background:white;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:0.3s;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.18);
+  }
+  .card img{
+    width:100%; height:170px; object-fit:cover;
+  }
+  .card-content{
+    padding:1rem 1.2rem;
+  }
+  .card-content h3{
+    color:#005fa3; 
+    font-size:1.3rem;
+    margin-bottom:.5rem;
+  }
+  .card-content p{
+    font-size:.92rem; color:#555; margin-bottom:1rem;
+  }
+  .card-content a{
+    display:inline-block;
+    color:white; background:#005fa3;
+    padding:8px 15px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+  }
+  .card-content a:hover{
+    background:#003e73;
+  }
+
+  footer{
+    background:#003e73; 
+    color:white;
+    text-align:center;
+    padding:1.5rem;
+    margin-top:2rem;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Explore Hyd</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="places.html">Places</a></li>
+    <li><a href="food.html">Food</a></li>
+    <li><a href="travel.html">Travel</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="transport.html">Transport</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  Famous Places in Hyderabad
+</section>
+
+<div class="container">
+
+  <!-- SEARCH -->
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search places...">
+  </div>
+
+  <!-- CARDS -->
+  <div class="cards" id="cardsContainer">
+
+   <!-- PLACE 1 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Charminar_south_west.jpg" alt="">
+  <div class="card-content">
+    <h3>Charminar</h3>
+    <p>One of Hyderabad’s most iconic landmarks located in the heart of the old city.</p>
+    <a href="https://en.wikipedia.org/wiki/Charminar" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 2 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Golconda_Fort_in_Hyderabad_03.jpg" alt="">
+  <div class="card-content">
+    <h3>Golconda Fort</h3>
+    <p>Historic fortress famous for its architecture and legendary acoustics.</p>
+    <a href="https://en.wikipedia.org/wiki/Golconda" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 3 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Hussain_Sagar_lake%2C_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Hussain Sagar Lake</h3>
+    <p>A beautiful lake known for the Buddha statue and sunset views.</p>
+    <a href="https://en.wikipedia.org/wiki/Hussain_Sagar" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 4 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/Ramoji_Film_City_Entrance.jpg" alt="">
+  <div class="card-content">
+    <h3>Ramoji Film City</h3>
+    <p>World's largest film studio complex and a top tourist attraction.</p>
+    <a href="https://en.wikipedia.org/wiki/Ramoji_Film_City" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 5 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Salar_Jung_Museum_Hyd.jpg" alt="">
+  <div class="card-content">
+    <h3>Salar Jung Museum</h3>
+    <p>One of India’s largest museums with rare art, antiques, and historic collections.</p>
+    <a href="https://en.wikipedia.org/wiki/Salar_Jung_Museum" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 6 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Birla_Mandir_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Birla Mandir</h3>
+    <p>A beautiful white marble temple offering peaceful ambience and city views.</p>
+    <a href="https://en.wikipedia.org/wiki/Birla_Mandir,_Hyderabad" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 7 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Nehru_Zoological_Park.jpg" alt="">
+  <div class="card-content">
+    <h3>Nehru Zoological Park</h3>
+    <p>One of India’s largest zoos with safari rides and wildlife habitats.</p>
+    <a href="https://en.wikipedia.org/wiki/Nehru_Zoological_Park" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 8 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Chowmahalla_Palace_2020.jpg" alt="">
+  <div class="card-content">
+    <h3>Chowmahalla Palace</h3>
+    <p>Royal palace of Nizams known for its grand halls and historic elegance.</p>
+    <a href="https://en.wikipedia.org/wiki/Chowmahalla_Palace" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 9 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b8/Qutb_Shahi_Tombs%2C_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Qutb Shahi Tombs</h3>
+    <p>Beautiful stone tombs of Qutb Shahi kings located near Golconda Fort.</p>
+    <a href="https://en.wikipedia.org/wiki/Qutb_Shahi_tombs" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 10 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Snow_world_hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Snow World</h3>
+    <p>India’s biggest snow theme park with fun activities and rides.</p>
+    <a href="https://en.wikipedia.org/wiki/Snow_World" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 11 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/db/Lumbini_Park_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Lumbini Park</h3>
+    <p>A lakeside park famous for laser shows, boat rides, and gardens.</p>
+    <a href="https://en.wikipedia.org/wiki/Lumbini_Park" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 12 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Taramati_Baradari.jpg" alt="">
+  <div class="card-content">
+    <h3>Taramati Baradari</h3>
+    <p>A historic cultural pavilion with scenic views and old architecture.</p>
+    <a href="https://en.wikipedia.org/wiki/Taramati_Baradari" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 13 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Shilparamam_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Shilparamam</h3>
+    <p>A cultural village showcasing Indian arts, crafts, dance, and traditions.</p>
+    <a href="https://en.wikipedia.org/wiki/Shilparamam" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 14 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/Wonderla_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Wonderla Hyderabad</h3>
+    <p>Top amusement park with water rides, roller coasters, and thrill attractions.</p>
+    <a href="https://en.wikipedia.org/wiki/Wonderla" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 15 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/IKEA_Hyderabad_Store.jpg" alt="">
+  <div class="card-content">
+    <h3>IKEA Hyderabad</h3>
+    <p>India’s first IKEA store offering global furniture and food experience.</p>
+    <a href="https://en.wikipedia.org/wiki/IKEA" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 16 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/KBR_Park_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>KBR National Park</h3>
+    <p>A huge green eco-park perfect for walking, jogging, and nature lovers.</p>
+    <a href="https://en.wikipedia.org/wiki/Kasu_Brahmananda_Reddy_National_Park" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 17 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Durgam_Cheruvu_Bridge.jpg" alt="">
+  <div class="card-content">
+    <h3>Durgam Cheruvu</h3>
+    <p>Famous cable bridge, lake view, boating, cafes, and nightlife spot.</p>
+    <a href="https://en.wikipedia.org/wiki/Durgam_Cheruvu" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 18 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Necklace_Road%2C_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Necklace Road</h3>
+    <p>Popular hangout spot with views, cycling paths, parks, and food stalls.</p>
+    <a href="https://en.wikipedia.org/wiki/Necklace_Road" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 19 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Tank_Bund_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Tank Bund</h3>
+    <p>Scenic road connecting Hyderabad and Secunderabad with lake views.</p>
+    <a href="https://en.wikipedia.org/wiki/Tank_Bund_Road" target="_blank">View Details</a>
+  </div>
+</div>
+      <!-- PLACE 21 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Birla_Science_Museum_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Birla Science Museum</h3>
+    <p>Interactive science center with planetarium and exhibitions.</p>
+    <a href="https://en.wikipedia.org/wiki/Birla_Science_Museum" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 22 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/British_Residency_Lucknow.jpg" alt="">
+  <div class="card-content">
+    <h3>British Residency</h3>
+    <p>Historic residency from Nizam era located in Hyderabad.</p>
+    <a href="https://en.wikipedia.org/wiki/Residency,_Hyderabad" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 23 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/1e/Jalavihar_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Jalavihar Water Park</h3>
+    <p>Family water park on Necklace Road with fun rides.</p>
+    <a href="https://en.wikipedia.org/wiki/Jalavihar" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 24 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Moula_Ali_Dargah.jpg" alt="">
+  <div class="card-content">
+    <h3>Moula Ali Dargah</h3>
+    <p>Beautiful hilltop dargah with panoramic city views.</p>
+    <a href="https://en.wikipedia.org/wiki/Moula_Ali_Dargah" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 25 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Chilkur_Balaji_Temple.jpg" alt="">
+  <div class="card-content">
+    <h3>Chilkur Balaji Temple</h3>
+    <p>Popular temple known as VISA Balaji for devotees.</p>
+    <a href="https://en.wikipedia.org/wiki/Chilkur_Balaji_Temple" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 26 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Mir_Alam_Tank_View.jpg" alt="">
+  <div class="card-content">
+    <h3>Mir Alam Tank</h3>
+    <p>Historic tank with a scenic walkway near the zoo.</p>
+    <a href="https://en.wikipedia.org/wiki/Mir_Alam_Tank" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 27 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/NTR_Gardens.JPG" alt="">
+  <div class="card-content">
+    <h3>NTR Gardens</h3>
+    <p>Vibrant urban park near Hussain Sagar for families and kids.</p>
+    <a href="https://en.wikipedia.org/wiki/NTR_Gardens" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 28 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Kukatpally_Housing_Board_City%2C_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Forum Sujana Mall</h3>
+    <p>Popular mall in Kukatpally for shopping and entertainment.</p>
+    <a href="https://en.wikipedia.org/wiki/Forum_Sujana_Mall" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 29 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Begumpet_Shopping.jpg" alt="">
+  <div class="card-content">
+    <h3>Begumpet Shopping Area</h3>
+    <p>Known for garments, fashion stores, and local shops.</p>
+    <a href="https://en.wikipedia.org/wiki/Begumpet" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 30 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/ad/Sudha_Cars_Museum.jpg" alt="">
+  <div class="card-content">
+    <h3>Sudha Cars Museum</h3>
+    <p>A fun museum displaying wacky cars and creative vehicles.</p>
+    <a href="https://en.wikipedia.org/wiki/Sudha_Cars_Museum" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 31 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Osmania_University%2C_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Osmania University</h3>
+    <p>Historic university known for its architecture and campus beauty.</p>
+    <a href="https://en.wikipedia.org/wiki/Osmania_University" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 32 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Mecca_Masjid_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Mecca Masjid</h3>
+    <p>One of India’s largest mosques situated near Charminar.</p>
+    <a href="https://en.wikipedia.org/wiki/Mecca_Masjid" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 33 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Sangeet_Theatre_Secunderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Sangeet Theatre</h3>
+    <p>Historic theatre in Secunderabad famous for Telugu cinema.</p>
+    <a href="https://en.wikipedia.org/wiki/Sangeet_Theatre" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 34 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Kothapet_Fruit_Market.jpg" alt="">
+  <div class="card-content">
+    <h3>Kothapet Fruit Market</h3>
+    <p>Major wholesale fruit market in Hyderabad.</p>
+    <a href="https://en.wikipedia.org/wiki/Kothapet" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 35 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Runway9.jpg" alt="">
+  <div class="card-content">
+    <h3>Runway 9</h3>
+    <p>Go-karting and adventure sports zone in Kompally.</p>
+    <a href="https://en.wikipedia.org/wiki/Runway_9" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 36 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Mount_Opera_Entrance.jpg" alt="">
+  <div class="card-content">
+    <h3>Mount Opera</h3>
+    <p>Amusement park, water rides, and family adventure destination.</p>
+    <a href="https://en.wikipedia.org/wiki/Mount_Opera" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 37 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Laad_Bazaar%2C_Hyderabad_Area.jpg" alt="">
+  <div class="card-content">
+    <h3>Laad Bazaar</h3>
+    <p>Famous for bangles, perfumes, pearls, and wedding shopping.</p>
+    <a href="https://en.wikipedia.org/wiki/Laad_Bazaar" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 38 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Hyderabad_Pearls.jpg" alt="">
+  <div class="card-content">
+    <h3>Pathergatti Market</h3>
+    <p>Historic shopping street near Charminar known for pearls.</p>
+    <a href="https://en.wikipedia.org/wiki/Pathergatti" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 39 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Jewellery_Market_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>General Bazaar</h3>
+    <p>Secunderabad’s oldest and busiest fashion shopping street.</p>
+    <a href="https://en.wikipedia.org/wiki/General_Bazaar" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 40 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Secunderabad_Railway_Station.jpg" alt="">
+  <div class="card-content">
+    <h3>Secunderabad Station Area</h3>
+    <p>Historic railway station and surrounding shopping places.</p>
+    <a href="https://en.wikipedia.org/wiki/Secunderabad_Junction" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 41 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/RTC_Cross_Roads%2C_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>RTC X Roads</h3>
+    <p>Famous for cinema theatres and classic Hyderabad food.</p>
+    <a href="https://en.wikipedia.org/wiki/RTC_X_Roads" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 42 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Sanghi_Temple.jpg" alt="">
+  <div class="card-content">
+    <h3>Sanghi Temple</h3>
+    <p>Beautiful hilltop temple around 25 km from Hyderabad.</p>
+    <a href="https://en.wikipedia.org/wiki/Sanghi_Temple" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 43 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Buddha_Statue_Hussain_Sagar.jpg" alt="">
+  <div class="card-content">
+    <h3>Buddha Statue</h3>
+    <p>Iconic monolithic statue located in the middle of Hussain Sagar.</p>
+    <a href="https://en.wikipedia.org/wiki/Gautama_Buddha" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 44 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/ORR_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>ORR View Point</h3>
+    <p>Scenic highway viewpoints popular for night drives.</p>
+    <a href="https://en.wikipedia.org/wiki/Outer_Ring_Road,_Hyderabad" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 45 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Hyderabad_Central_Mall.jpg" alt="">
+  <div class="card-content">
+    <h3>Hyderabad Central</h3>
+    <p>A popular mall located in Punjagutta.</p>
+    <a href="https://en.wikipedia.org/wiki/Hyderabad_Central" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 46 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Inorbit_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Inorbit Mall</h3>
+    <p>Mall with lake view, restaurants, and shopping brands.</p>
+    <a href="https://en.wikipedia.org/wiki/Inorbit_Mall" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 47 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/City_Center_Mall_Banjara_Hills.jpg" alt="">
+  <div class="card-content">
+    <h3>City Center Mall</h3>
+    <p>Shopping mall in Banjara Hills with entertainment options.</p>
+    <a href="https://en.wikipedia.org/wiki/City_Center_Mall" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 48 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Manjeera_Mall%2C_Kukatpally%2C_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>Manjeera Mall</h3>
+    <p>Large mall located in Kukatpally.</p>
+    <a href="https://en.wikipedia.org/wiki/Manjeera_Majestic_Mall" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 49 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/State_Gallery_of_Art_Hyderabad.jpg" alt="">
+  <div class="card-content">
+    <h3>State Gallery of Art</h3>
+    <p>Art exhibitions, cultural works, and modern galleries.</p>
+    <a href="https://en.wikipedia.org/wiki/State_Gallery_of_Art" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE 50 -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Hitex_Exhibition_Center.jpg" alt="">
+  <div class="card-content">
+    <h3>HITEX Exhibition Center</h3>
+    <p>Hyderabad’s biggest exhibition & convention venue.</p>
+    <a href="https://en.wikipedia.org/wiki/Hyderabad_International_Trade_Expositions_Limited" target="_blank">View Details</a>
+  </div>
+</div>
+
+<!-- PLACE lastt -->
+<div class="card">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Charminar_night_market.jpg" alt="">
+  <div class="card-content">
+    <h3>Charminar Night Market</h3>
+    <p>Famous market for bangles, food, clothes, perfumes, and festive shopping.</p>
+    <a href="https://en.wikipedia.org/wiki/Laad_Bazaar" target="_blank">View Details</a>
+  </div>
+</div>
+
+
+
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const cards = document.querySelectorAll(".card");
+
+  searchInput.addEventListener("keyup", function () {
+    const value = searchInput.value.toLowerCase();
+
+    cards.forEach(card => {
+      const placeName = card.querySelector("h3").textContent.toLowerCase();
+      card.style.display = placeName.includes(value) ? "block" : "none";
+    });
+  });
+</script>
+
+</body>
+</html>
