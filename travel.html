@@ -1,211 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hyderabad Metro Travel Guide</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Hyd - Travel</title>
+<style>
+  body {margin:0; font-family:Arial,sans-serif; background:#f5f5f5; color:#333;}
+  nav {background:#0077cc; color:#fff; padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center;}
+  nav h1 {font-size:1.5rem;}
+  nav ul {list-style:none; display:flex; gap:1rem;}
+  nav ul li a {color:#fff; text-decoration:none; font-weight:bold;}
+  nav ul li a:hover {text-decoration:underline;}
 
-    header {
-      background-color: #059d0a;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+  .hero {background:url('https://upload.wikimedia.org/wikipedia/commons/6/63/Hyderabad_Metro_at_Nanakram_Guda.jpg') center/cover no-repeat; height:300px; display:flex; justify-content:center; align-items:center; color:#fff; text-shadow:1px 1px 4px #000;}
+  .hero h2 {font-size:2.5rem; text-align:center;}
 
-    h1 {
-      margin: 0;
-    }
+  .container {max-width:1000px; margin:2rem auto; padding:0 1rem;}
+  .search-box {text-align:center; margin-bottom:2rem;}
+  .search-box input {width:60%; padding:.75rem; border:1px solid #ccc; border-radius:6px; font-size:1rem;}
+  @media(max-width:700px){.search-box input{width:90%;}}
 
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+  .cards {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:1.5rem;}
+  .card {background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center; transition:transform 0.3s, box-shadow 0.3s;}
+  .card:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+  .card img {width:60px; margin-bottom:1rem;}
+  .card h3 {margin-bottom:.5rem; color:#0077cc;}
+  .card p {font-size:.9rem; color:#555;}
+  .card a {color:#0077cc; text-decoration:none; font-weight:bold;}
+  .card a:hover{text-decoration:underline;}
 
-    h2 {
-      color: #0bb950;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 5px;
-    }
-
-    ul {
-      list-style-type: square;
-      padding-left: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 15px 0;
-    }
-
-    table, th, td {
-      border: 1px solid #ccc;
-      text-align: left;
-      padding: 8px;
-    }
-     .img-container {
-      text-align: center;   /* centers inline elements inside */
-    }
-
-    img {
-      max-width: 50%;
-      height: auto;
-      border-radius: 8px;
-      margin: 20px auto;
-      display: block;
-    }
-
-
-    th {
-      background-color: #0c903e;
-      color: white;
-    }
-
-    footer {
-      background-color: #0b8a19;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
-  </style>
+  footer {background:#333; color:#fff; text-align:center; padding:1.5rem; margin-top:2rem;}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Hyderabad Metro Travel Guide 🚇</h1>
-    <p>Fast • Affordable • Eco-Friendly</p>
-  </header>
 
-  <section>
-    <h2>About Hyderabad Metro</h2>
-    <p>The Hyderabad Metro is one of India’s largest metro networks, offering a safe and efficient way to travel across the city. It has three main corridors covering major parts of Hyderabad.</p>
-  </section>
+<!-- Navbar -->
+<nav>
+  <h1>Explore Hyd</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="places.html">Places</a></li>
+    <li><a href="food.html">Food</a></li>
+    <li><a href="travel.html">Travel</a></li>
+    <li><a href="education.html">Education</a></li>
+  </ul>
+</nav>
 
-  <section>
-    <h2>Metro Corridors</h2>
-    <table>
-      <tr>
-        <th>Line</th>
-        <th>Route</th>
-        <th>Key Stations</th>
-      </tr>
-      <tr>
-        <td>Red Line</td>
-        <td>Miyapur ↔ LB Nagar</td>
-        <td>Miyapur, Ameerpet,Assembly,  Dilsukhnagar, LB Nagar</td>
-      </tr>
-      <tr>
-        <td>Blue Line</td>
-        <td>Nagole ↔ Raidurg</td>
-        <td>Nagole, Uppal, Ameerpet, Hitech City, Raidurg</td>
-      </tr>
-      <tr>
-        <td>Green Line</td>
-        <td>MG Bus Station ↔ JBS Parade Ground</td>
-        <td>MG Bus Station, Secunderabad, JBS Parade</td>
-      </tr>
-    </table>
-  </section>
+<!-- Hero -->
+<section class="hero">
+  <h2>Travel Around Hyderabad</h2>
+</section>
 
-  <section>
-    <h2>Ticket & Smart Card Options</h2>
-    <ul>
-      <li>Minimum fare: ₹10, Maximum fare: ₹60</li>
-      <li>Smart Card available for regular commuters</li>
-      <li>Tickets available at stations or book via PhonePe, Google Pay, Paytm</li>
-    </ul>
-  </section>
-    <a href="travel.html"></a>
-    <img src="https://ltmetro.com/wp-content/uploads/2024/12/Hyderabad-Metro-Rail-Network-Map-scaled-legend-bottom.jpg">
+<!-- Container -->
+<div class="container">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for travel services...">
+  </div>
 
-  <section>
-    <h2>Travel Tips</h2>
-    <ul>
-      <li>Peak hours: 8–11 AM & 5–8 PM – plan accordingly</li>
-      <li>Use <strong>Ameerpet</strong> for line changes (Red ↔ Blue)</li>
-      <li>Keep your token till the end of the journey</li>
-      <li>No eating/drinking inside trains</li>
-    </ul>
-  </section>
-  <section>
-    <h2>Local Bus Routes (TSRTC)</h2>
-    <table>
-      <tr>
-        <th>Route No.</th>
-        <th>From → To</th>
-        <th>Major Stops</th>
-      </tr>
-      <tr>
-        <td>219</td>
-        <td>Secunderabad → Patancheru</td>
-        <td>Secunderabad, Bowenpally,Balanagar,Jntu,Kukatpally ,Miyapur,patancheru</td>
-      </tr>
-      <tr>
-        <td>218</td>
-        <td>Koti → Lingampally</td>
-        <td>Koti, Lakdikapul , Ameerpet ,Nampally, Kphb,Lingampally</td>
-      </tr>
-      <tr>
-        <td>127K</td>
-        <td>Koti → Kondapur</td>
-        <td>Koti, Lakdikapul, Abids, Madhapur,Hitechcity,Jubilee Hills,Banjara Hills, Kondapur</td>
-      </tr>
-      <tr>
-        <td>10H</td>
-        <td>Secunderabad → Kondapur</td>
-        <td>Secunderabad, Begumpet, Ameerpet, Jubilee Hills, Paradise,Yousuguda</td>
-      </tr>
-        <tr>
-        <td>113K/L</td>
-        <td>Uppal→Lingampally</td>
-        <td>Uppal, Narayanaguda,Khairtabad,Erramanzil,Panjagutta,SR nagar,Erragadda,Hyder nagar(calvary church),Lingampally</td>
-      </tr>
-      <tr>
-        <td>113M</td>
-        <td>Mehdipatnam → Uppal</td>
-        <td>Mehdipatnam, Masab tank,saifabad,Secretariat,Tilak nagar,Uppal  </td>
-      </tr>
-      <tr>
-        <td>83J/230</td>
-        <td>Dundigal → kachiguda</td>
-        <td>Dundigal,Gandimaysamma,Bhadurpally,Jeedimetla,Shapurnagar,IDPL,Moosapet,YMCA,Kachiguda  </td>
-      </tr>
+  <div class="cards" id="cardsContainer">
+    <!-- Cards injected by JS -->
+  </div>
+</div>
 
-    </table>
-  </section>
+<!-- Footer -->
+<footer>
+  &copy; 2025 Explore Hyd | All Rights Reserved
+</footer>
 
-  <section>
-    <h2>Tickets & Smart Cards</h2>
-    <ul>
-      <li>Metro Fare: ₹10 – ₹60</li>
-      <li>Bus Fare: ₹10 – ₹45 (depends on distance)</li>
-      <li>TSRTC & Metro Smart Cards available</li>
-    </ul>
-  </section>
+<script>
+const data = [
+  {name:"Rapido", description:"Quick bike rides across Hyderabad", icon:"🛵", link:"https://www.rapido.bike/"},
+  {name:"Ola Cabs", description:"Book rides instantly", icon:"🚖", link:"https://www.olacabs.com/"},
+  {name:"Uber", description:"Ride-hailing service", icon:"🚗", link:"https://www.uber.com/in/en/"},
+  {name:"RedBus", description:"Plan intercity travel easily", icon:"🚌", link:"https://www.redbus.in/"},
+  {name:"Hyderabad Metro", description:"Metro train network in the city", icon:"🚇", link:"https://www.ltmetro.com/"},
+  {name:"TSRTC", description:"State-run buses", icon:"🚌", link:"https://www.tsrtconline.in/"},
+  {name:"Yulu Bikes", description:"Electric bike rentals", icon:"🚴‍♂", link:"https://www.yulu.bike/"},
+];
 
-  <section>
-    <h2>Travel Tips</h2>
-    <ul>
-      <li>Use <strong>Ameerpet</strong> for line changes in Metro (Red ↔ Blue)</li>
-      <li>TSRTC buses connect metro stations with areas not covered by metro</li>
-      <li>Peak hours: 8–11 AM & 5–8 PM – plan accordingly</li>
-      <li>Download TSRTC app for live bus timings</li>
-    </ul>
-  </section>
+const container = document.getElementById('cardsContainer');
+const searchInput = document.getElementById('searchInput');
 
-  <footer>
-            <p>&copy; 2025 Hyderabad Travel Guide</p>
-    <p>&copy; 2025 Hyderabad Metro & Bus Travel Guide | All Rights Reserved | Designed by @Ameena @Ujwala</p>
-  </footer>
-  
+function renderCards(filter="") {
+  container.innerHTML = "";
+  const f = filter.toLowerCase();
+  const filtered = data.filter(item => item.name.toLowerCase().includes(f) || item.description.toLowerCase().includes(f));
+  filtered.forEach(item => {
+    const card = document.createElement('div');
+    card.className = "card";
+    card.innerHTML = `
+      <div class="icon">${item.icon}</div>
+      <h3>${item.name}</h3>
+      <p>${item.description}</p>
+      <a href="${item.link}" target="_blank">Visit</a>
+    `;
+    container.appendChild(card);
+  });
+  if(filtered.length===0){
+    container.innerHTML="<p style='text-align:center;'>No results found.</p>";
+  }
+}
+
+// Initial render
+renderCards();
+
+// Search filter
+searchInput.addEventListener('input', () => renderCards(searchInput.value));
+</script>
+
 </body>
 </html>
