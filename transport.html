@@ -1,226 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Transport — Hyderabad City Guide</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transport – Explore Hyd</title>
+<style>
+  /* RESET */
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{font-family:'Poppins', Arial, sans-serif; background:#f4f8fc; color:#333;}
 
-  <!-- If you have a global styles.css, remove the <style> block below and keep the link:
-  <link rel="stylesheet" href="styles.css">
-  -->
-  <style>
-    :root{
-      --accent:#140a9b;
-      --muted:#3e1598;
-      --card-bg:#fff;
-      --page-bg:#f4f4f4;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-      background:var(--page-bg);
-      color:#111;
-      -webkit-font-smoothing:antialiased;
-    }
+  /* NAVBAR */
+  .navbar{
+    background:#0056b3;
+    padding:1rem 2rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+    position:sticky;
+    top:0;
+    z-index:999;
+  }
+  .logo{
+    color:white;
+    font-size:1.8rem;
+    font-weight:700;
+  }
+  .nav-links{
+    list-style:none;
+    display:flex;
+    gap:1.3rem;
+  }
+  .nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:1rem;
+    font-weight:500;
+    padding:8px 14px;
+    border-radius:6px;
+    transition:.3s;
+  }
+  .nav-links a:hover{
+    background:white;
+    color:#0056b3;
+  }
 
-    header{
-      background:var(--accent);
-      color:white;
-      padding:14px 16px;
-      text-align:center;
-    }
-    header h1{margin:0;font-size:18px;}
-    nav{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      padding:8px 10px;
-      background:rgba(255,255,255,0.03);
-      overflow:auto;
-    }
-    nav a{color:rgba(255,255,255,0.9); text-decoration:none; font-size:13px;}
-    .container{padding:14px;}
+  /* HERO */
+  .hero{
+    background:url('https://cdn.pixabay.com/photo/2016/11/29/05/28/traffic-1868395_1280.jpg') 
+      center/cover no-repeat;
+    height:300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-shadow:2px 2px 6px black;
+    font-size:2.3rem;
+    font-weight:bold;
+  }
 
-    .section{
-      margin-bottom:14px;
-    }
-    .section h2{
-      font-size:16px;
-      margin:0 0 8px 0;
-      color:var(--accent);
-    }
+  /* CONTAINER */
+  .container{
+    max-width:1200px;
+    margin:2rem auto;
+    padding:0 1rem;
+  }
 
-    .card{
-      background:var(--card-bg);
-      border-radius:10px;
-      padding:12px;
-      box-shadow:0 1px 4px rgba(0,0,0,0.06);
-      margin-bottom:10px;
-    }
-    .muted{color:var(--muted); font-size:14px; margin:6px 0 0 0;}
-    .small{font-size:13px}
+  /* SECTION TITLE */
+  .section-title{
+    font-size:2rem;
+    color:#0056b3;
+    margin-bottom:1rem;
+    text-align:center;
+    font-weight:700;
+  }
 
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:8px;
-    }
+  /* CARDS GRID */
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1.5rem;
+    margin-top:1.5rem;
+  }
 
-    /* map */
-    .map-wrap{
-      width:100%;
-      border-radius:10px;
-      overflow:hidden;
-      box-shadow:0 1px 4px rgba(0,0,0,0.08);
-    }
-    iframe{width:100%; height:220px; border:0; display:block;}
+  .card{
+    background:white;
+    border-radius:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+    overflow:hidden;
+    transition:.3s;
+    padding:1rem;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  }
+  .card h3{
+    color:#0056b3;
+    font-size:1.3rem;
+    margin-bottom:0.8rem;
+  }
+  .card p{
+    color:#555;
+    font-size:0.95rem;
+    line-height:1.5;
+  }
 
-    /* quick list */
-    .list-row{display:flex; justify-content:space-between; align-items:center; gap:8px;}
-    .badge{background:var(--accent); color:white; padding:6px 8px; border-radius:8px; font-size:13px;}
+  /* MAP */
+  .map-wrap{
+    width:100%;
+    border-radius:12px;
+    overflow:hidden;
+    margin-top:1rem;
+  }
+  iframe{
+    width:100%;
+    height:220px;
+    border:0;
+    display:block;
+  }
 
-    footer{padding:18px; text-align:center; color:var(--muted); font-size:13px;}
-    @media(min-width:720px){
-      header h1{font-size:22px}
-      .grid{grid-template-columns:1fr 1fr;}
-    }
-  </style>
+  /* FOOTER */
+  footer{
+    background:#003e80;
+    color:white;
+    text-align:center;
+    padding:1.5rem;
+    margin-top:3rem;
+  }
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>Transport — Hyderabad</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="places.html">Places</a>
-    <a href="preschools.html">Preschools</a>
-    <a href="transport.html" style="text-decoration:underline">Transport</a>
-  </nav>
-</header>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Explore Hyd</div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="places.html">Places</a></li>
+    <li><a href="food.html">Food</a></li>
+    <li><a href="shopping.html">Shopping</a></li>
+    <li><a href="transport.html">Transport</a></li>
+  </ul>
+</nav>
 
-<main class="container">
+<!-- HERO -->
+<section class="hero">
+  Transport in Hyderabad
+</section>
 
-  <!-- Metro -->
-  <section class="section">
-    <h2>Hyderabad Metro</h2>
+<!-- CONTENT -->
+<div class="container">
+
+  <<h2 class="section-title">Metro</h2>
+<div class="cards">
+  <div class="card">
+    <h3>Hyderabad Metro</h3>
+    <!-- Metro map image -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Hyderabad_Metro_map.svg/1200px-Hyderabad_Metro_map.svg.png" alt="Hyderabad Metro Map">
+    <p>Connects major IT hubs and central areas. Fast travel during peak hours.</p>
+    <p><strong>Lines:</strong> Red (Miyapur–LB Nagar), Blue (Ameerpet–Falaknuma), Green (JBS–Mahatma Gandhi Bus Station)</p>
+    <p><strong>Weekday Timings:</strong> 06:00 — 23:00</p>
+    <p><strong>Weekend Timings:</strong> 07:00 — 23:00</p>
+  </div>
+</div>
+
+
+  <h2 class="section-title">Buses</h2>
+  <div class="cards">
     <div class="card">
-      <p class="small">Hyderabad Metro connects major IT hubs and central areas. Useful for fast travel during peak hours.</p>
-      <div class="muted">
-        <strong>Important lines:</strong> Red (Miyapur–LBNagar), Blue (Ameerpet–Falaknuma), Green (JBS–Mahatma Gandhi Bus Station)
-      </div>
-      <div style="margin-top:10px" class="list-row">
-        <span class="small">Timings: 06:00 — 23:00 (approx)</span>
-        <span class="badge">Smart Card / Tokens</span>
-        
-      </div>
-      <p class="muted" style="margin-top:8px">Tip: Use metro + last-mile auto/cab to reach places not directly on the line.</p>
+      <h3>TSRTC Buses</h3>
+      <p>City and intercity buses. Bus numbers connect nearly every neighbourhood.</p>
+      <p><strong>City Buses:</strong> Frequent & cheap. Best for short trips.</p>
+      <p><strong>RTC Palle Velugu:</strong> Intercity / rural connectivity.</p>
     </div>
-  </section>
-<section>
-    <h2>Metro Corridors</h2>
-    <table>
-      <tr>
-        <th>Line</th>
-        <th>Route</th>
-        <th>Key Stations</th>
-      </tr>
-      <tr>
-        <td>Red Line</td>
-        <td>Miyapur ↔ LB Nagar</td>
-        <td>Miyapur, Ameerpet,Assembly,  Dilsukhnagar, LB Nagar</td>
-      </tr>
-      <tr>
-        <td>Blue Line</td>
-        <td>Nagole ↔ Raidurg</td>
-        <td>Nagole, Uppal, Ameerpet, Hitech City, Raidurg</td>
-      </tr>
-      <tr>
-        <td>Green Line</td>
-        <td>MG Bus Station ↔ JBS Parade Ground</td>
-        <td>MG Bus Station, Secunderabad, JBS Parade</td>
-      </tr>
-    </table>
-  </section>
-  <!-- Buses -->
-  <section class="section">
-    <h2>TSRTC Buses</h2>
+  </div>
+
+  <h2 class="section-title">Rail & MMTS</h2>
+  <div class="cards">
     <div class="card">
-      <p class="small">Telangana State RTC operates city and intercity buses. Bus numbers connect nearly every neighbourhood.</p>
-      <div class="muted"><strong>How to use:</strong> Look for route numbers, ask the conductor, or use local bus apps.</div>
-      <div style="margin-top:8px" class="grid">
-        <div>
-          <strong>City Buses</strong>
-          <p class="muted small">Frequent & cheap. Best for short local trips.</p>
-        </div>
-        <div>
-          <strong>RTC Palle Velugu</strong>
-          <p class="muted small">Intercity / rural connectivity.</p>
-        </div>
-      </div>
+      <h3>MMTS & Stations</h3>
+      <p>Suburban trains connect Secunderabad, Lingampally, Falaknuma and more.</p>
+      <p><strong>Major stations:</strong> Secunderabad, Hyderabad Deccan, Begumpet, Falaknuma</p>
     </div>
-  </section>
+  </div>
 
-  <!-- Rail & MMTS -->
-  <section class="section">
-    <h2>Rail (MMTS & Stations)</h2>
+  <h2 class="section-title">Airport</h2>
+  <div class="cards">
     <div class="card">
-      <p class="small">MMTS suburban trains connect Secunderabad, Lingampally, Falaknuma and more. Great for avoiding road traffic.</p>
-      <p class="muted"><strong>Major stations:</strong> Secunderabad, Hyderabad Deccan (Nampally), Falaknuma, Begumpet.</p>
+      <h3>Rajiv Gandhi International Airport</h3>
+      <p>Shamshabad — ~30–40 km from city centre depending on traffic.</p>
+      <p><strong>Transport options:</strong> Taxis, Ola/Uber, Airport shuttle buses, prepaid counters.</p>
     </div>
-  </section>
+  </div>
 
-  <!-- Airport -->
-  <section class="section">
-    <h2>Rajiv Gandhi International Airport (RGIA)</h2>
+  <h2 class="section-title">Autos & Cabs</h2>
+  <div class="cards">
     <div class="card">
-      <p class="small">Location: Shamshabad — ~30–40 km from city centre depending on traffic.</p>
-      <p class="muted"><strong>Transport options:</strong> Airport taxis, Ola/Uber, Airport shuttle buses (pushpak), and prepaid counters at the airport.</p>
+      <h3>Auto Rickshaws</h3>
+      <p>Negotiate short trips or insist on the meter. 3–5 km: ₹40–120.</p>
+      <h3>Cabs (Ola/Uber)</h3>
+      <p>Safer for night travel and longer trips. Use app fare estimates.</p>
     </div>
-  </section>
+  </div>
 
-  <!-- Autos & Cabs -->
-  <section class="section">
-    <h2>Autos, Cabs & Fare Tips</h2>
-    <div class="card">
-      <p class="small"><strong>Autos</strong>: Negotiate short trips or insist on the meter. For 3–5 km expect ₹40–120 depending on area.</p>
-      <p class="small" style="margin-top:8px"><strong>Cabs (Ola / Uber)</strong>: Safer for night travel and longer trips. Use app fare estimates.</p>
-    </div>
-  </section>
+  <h2 class="section-title">Map — Hyderabad</h2>
+  <div class="map-wrap card">
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=78.3340%2C17.3135%2C78.5769%2C17.5235&amp;layer=mapnik&amp;marker=17.4247%2C78.4555" loading="lazy" title="Hyderabad map"></iframe>
+  </div>
 
-  <!-- Map -->
-  <section class="section">
-    <h2>Map — Hyderabad (OpenStreetMap)</h2>
-    <div class="map-wrap card">
-      <!-- OpenStreetMap embed centered on Hyderabad coordinates -->
-      <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=78.3340%2C17.3135%2C78.5769%2C17.5235&amp;layer=mapnik&amp;marker=17.4247%2C78.4555" loading="lazy" title="Hyderabad map"></iframe>
-    </div>
-    <p class="muted" style="margin-top:8px">Tip: Tap the map to open full OpenStreetMap and explore nearby stations and routes.</p>
-  </section>
+</div>
 
-  <!-- Quick Contacts -->
-  <section class="section">
-    <h2>Quick Contacts & Helplines</h2>
-    <div class="card">
-      <p class="small"><strong>Emergency Transit Help:</strong></p>
-      <p class="muted small">Rail Enquiry: 139<br>Airport Enquiry: +91 846 799 7000 (check locally)<br>TSRTC Customer Care: 040-xxxx xxxx</p>
-      <p class="muted" style="margin-top:8px">(Replace with local numbers you prefer)</p>
-    </div>
-  </section>
-
-  <!-- Short FAQ -->
-  <section class="section">
-    <h2>Quick FAQ</h2>
-    <div class="card">
-      <p><strong>Q:</strong> Best time to travel by road?<br><strong>A:</strong> Early mornings (6–9) or late evenings (after 21:00) avoid heavy traffic.</p>
-      <p style="margin-top:8px"><strong>Q:</strong> Is metro cheap?<br><strong>A:</strong> Yes — cheaper than cabs for many routes.</p>
-    </div>
-  </section>
-
-</main>
-
+<!-- FOOTER -->
 <footer>
-  © 2025 Hyderabad City Guide — Transport info (quick & simple)
+  © 2025 Explore Hyd | All Rights Reserved
 </footer>
 
 </body>
