@@ -1205,18 +1205,95 @@ const allPreschools = [
 // Other categories
 const data = {
   schools: [
-    {name:"Chirec International School", description:"Bachupally", icon:"🏫", link:"https://www.chirec.edu.in/"},
-    {name:"Delhi Public School", description:"Gachibowli", icon:"🏫", link:"https://www.dpshyderabad.in/"},
-  ],
+    { name: "Delhi Public School, Gachibowli", description: "CBSE, Gachibowli", icon: "🏫", link: "https://www.dpshyderabad.in/" },  
+  { name: "Oakridge International School", description: "IB (PYP, MYP, DP) + CBSE, Gachibowli", icon: "🌐", link: "https://www.oakridge.in/gachibowli/" },  
+  { name: "CHIREC International School", description: "CBSE & Cambridge / IB (Gachibowli branch)", icon: "🎓", link: "https://www.chirec.ac.in/" },  
+  { name: "The Gaudium School", description: "IB PYP / MYP / DP, CBSE, CIE", icon: "📘", link: "https://www.edustoke.com/hi/hyderabad/schools-in-gachibowli#The%20Gaudium%20School" },  
+  { name: "NASR School for Boys", description: "ICSE, Gachibowli", icon: "👦", link: "https://www.edustoke.com/hi/hyderabad/schools-in-gachibowli#NASR%20School%20for%20Boys" },  
+  { name: "PRERANA Waldorf School", description: "Waldorf-style education, Gachibowli", icon: "✏️", link: "https://www.edustoke.com/hi/hyderabad/schools-in-gachibowli#PRERANA%20WALDORF%20SCHOOL" },  
+  { name: "PM SHRI Kendriya Vidyalaya, Gachibowli", description: "Government KVS school", icon: "🏫", link: "https://cdnbbsr.s3waas.gov.in/s3kv01760c4ac1ecb85661def42bd370b7/uploads/2025/03/2025032554.pdf" },  
+  { name: "Iris Florets World School", description: "State Board, Gachibowli", icon: "🌱", link: "https://www.edustoke.com/hi/hyderabad/schools-in-gachibowli#Irisflorets%20Gachibowli" },  
+  { name: "Vidyanjali High School", description: "CBSE, Serilingampally / Gachibowli-area", icon: "📚", link: "https://www.edustoke.com/hi/hyderabad/schools-in-gachibowli#Vidyanjali%20High%20school" },  
+  { name: "Maharishi Vidya Mandir", description: "CBSE, nearby in Kothaguda", icon: "🏫", link: "https://www.edustoke.com/hi/hyderabad/cbse-schools-in-gachibowli" }  
+],
+
   intermediate: [
     {name:"St. Ann's College for Women", description:"MG Road", icon:"🎓", link:"https://www.stannscollegehyd.org/"},
     {name:"Narayana Junior College", description:"Kukatpally", icon:"🎓", link:"https://www.narayanagroup.com/"},
+    { name: "Sri Chaitanya Junior College", description: "MPC / BiPC + JEE / EAMCET prep", icon: "🔬", link: "https://srichaitanyajuniorcollege.com/" },  
+  { name: "Narayana Junior College", description: "MPC / BiPC / CEC with coaching", icon: "📘", link: "https://www.narayanaedu.com/" },  
+  { name: "PAGE Junior College", description: "Intermediate (MPC, BiPC, MEC, CEC)", icon: "🎓", link: "https://pageacademy.com/" },  
+  { name: "Little Flower Junior College", description: "State-Board Intermediate, Co-Ed", icon: "🌼", link: "https://lfjc.co.in/" },  
+  { name: "Gatik Junior College", description: "MPC / MEC / BiPC + integrated coaching", icon: "📚", link: "https://www.gatikedu.com/" },  
+  { name: "Tapasya College of Commerce & Management", description: "Commerce-focused Intermediate", icon: "💼", link: "https://www.tapasyaedu.com/" },  
+  { name: "St. Mary’s Junior College", description: "Science / Commerce / Humanities", icon: "🏫", link: "https://smjc.in/" },  
+  { name: "St. Ann’s Junior College (Girls)", description: "Girls only, Sc / Commerce / Arts", icon: "👩‍🎓", link: "https://indis.academy/edu/best-intermediate-colleges-in-hyderabad/" },  
+  { name: "Bhavans Junior College", description: "Part of Bharatiya Vidya Bhavan, Inter College", icon: "📖", link: "https://indis.academy/edu/best-intermediate-colleges-in-hyderabad/" },  
+  { name: "NRI Junior College", description: "Intermediate + Entrance Coaching", icon: "🌐", link: "https://www.edustoke.com/best-junior-colleges-in-hyderabad" },  
+  { name: "Gyanville Academy (Junior College)", description: "Integrated Inter + IIT / NEET coaching", icon: "💡", link: "https://gosh.gyanville.in/" },  
+  { name: "Aakash / BYJU’S Junior College", description: "Medical + Engineering Coaching Integrated", icon: "🏥", link: "https://neetwalaz.com/best-intermediate-colleges-in-hyderabad-for" },  
+  { name: "Vision 40 Junior College", description: "Focused MPC / IIT preparation", icon: "👀", link: "https://neetwalaz.com/best-intermediate-colleges-in-hyderabad-for" },  
+  { name: "Spark Junior College", description: "Day-scholar / Residential Inter College", icon: "✨", link: "https://neetwalaz.com/best-intermediate-colleges-in-hyderabad-for" },  
+  { name: "Roots Junior College", description: "Commerce & Business Studies", icon: "🌱", link: "https://indis.academy/edu/best-intermediate-colleges-in-hyderabad/" },  
+  { name: "Sultan-Ul-Uloom Junior College", description: "Science / Commerce / Humanities", icon: "🕌", link: "https://indis.academy/edu/best-intermediate-colleges-in-hyderabad/" },  
+  { name: "St. Francis Xavier Junior College", description: "Intermediate with holistic education", icon: "✝️", link: "https://indis.academy/edu/best-intermediate-colleges-in-hyderabad/" },  
+  { name: "MEC Junior College", description: "Mathematics, Economics, Commerce stream", icon: "📊", link: "https://indis.academy/edu/best-intermediate-colleges-in-hyderabad/" },  
+  { name: "Pragathi Junior College", description: "Science & Commerce Courses", icon: "🧪", link: "https://indis.academy/edu/best-intermediate-colleges-in-hyderabad/" },  
+  { name: "Sri Mega Study Circle Junior College", description: "Science / Commerce with study circle coaching", icon: "🎯", link: "https://indis.academy/edu/best-intermediate-colleges-in-hyderabad/" }  
+
+
   ],
+
   higher: [
     {name:"Osmania University", description:"Degree courses", icon:"🎓", link:"https://www.osmania.ac.in/"},
     {name:"Jawaharlal Nehru Technological University", description:"BTech / Engineering", icon:"🎓", link:"https://www.jntuh.ac.in/"},
     {name:"Kamineni Institute of Medical Sciences", description:"MBBS", icon:"🩺", link:"https://kimshealth.org/"},
     {name:"NALSAR University", description:"Law", icon:"⚖", link:"https://www.nalsar.ac.in/"},
+    
+  // Osmania University (OU)
+  { name:"Nizam College", description:"OU – Autonomous, Hyderabad", icon:"🏛️", link:"https://www.nizamcollege.ac.in/" },
+  { name:"St. Francis College for Women", description:"OU – Autonomous, Begumpet", icon:"👩‍🎓", link:"https://www.sfc.ac.in/" },
+  { name:"Loyola Academy Degree College", description:"OU – Autonomous, Secunderabad", icon:"🎓", link:"https://lact.in/" },
+  { name:"Badruka College of Commerce", description:"OU – Commerce-focused, Kachiguda", icon:"💼", link:"https://www.badruka.com/" },
+
+  // JNTU Hyderabad
+  { name:"JNTUH College of Engineering", description:"JNTU – Main Campus, Kukatpally", icon:"🛠️", link:"https://jntuhceh.ac.in/" },
+  { name:"CBIT (Chaitanya Bharathi Inst. of Tech)", description:"Affiliated to JNTU, Gandipet", icon:"🏫", link:"https://www.cbit.ac.in/" },
+  { name:"Vasavi College of Engineering", description:"JNTU-affiliated, Ibrahimbagh", icon:"🔧", link:"https://www.vce.ac.in/" },
+
+  // Kakatiya University (KU)
+  { name:"Kakatiya Degree College", description:"KU-affiliated, Warangal", icon:"🏛️", link:"https://kakatiya.ac.in/" },
+  { name:"Kakatiya Govt. College", description:"KU – Public Degree College", icon:"📘", link:"https://gdcts.cgg.gov.in/" },
+
+  // University of Hyderabad (UoH / HCU)
+  { name:"University of Hyderabad – School of Humanities", description:"Central University, Gachibowli", icon:"🌐", link:"https://uohyd.ac.in/" },
+  { name:"University of Hyderabad – School of Social Sciences", description:"Central University, Integrated Masters", icon:"📚", link:"https://uohyd.ac.in/" },
+
+  // Mahatma Gandhi University (MGU Nalgonda)
+  { name:"MGU Campus College", description:"MGU – Main Campus, Nalgonda", icon:"🏫", link:"https://mguniversity.ac.in/" },
+  { name:"Sri Vikas Degree College", description:"Affiliated to MGU", icon:"📖", link:"https://gdcts.cgg.gov.in/" },
+
+  // Telangana University (TU)
+  { name:"Telangana University Campus College", description:"TU – Dichpally", icon:"🏛️", link:"https://tuadmissions.org/" },
+  { name:"Rishi MS Institute of Engineering & Technology for Women", description:"TU-affiliated", icon:"👩‍🔧", link:"https://www.rishiuniversity.edu.in/" },
+
+  // Rayalaseema University
+  { name:"Rayalaseema University College", description:"RU – Kurnool", icon:"🎓", link:"https://ruk.ac.in/" },
+
+  // Andhra University (AU)
+  { name:"AU College of Arts & Commerce", description:"AU – Visakhapatnam", icon:"📘", link:"https://andhrauniversity.edu.in/" },
+  { name:"AU College of Science & Technology", description:"AU – Degree Programs", icon:"🔬", link:"https://andhrauniversity.edu.in/" },
+
+  // Gitam (Deemed University)
+  { name:"GITAM School of Science", description:"Deemed University, Vizag / Hyd / Blr", icon:"🌎", link:"https://www.gitam.edu/" },
+
+  // Manipal University
+  { name:"Manipal College of Arts & Science", description:"Degree Programs, MAHE", icon:"🏫", link:"https://manipal.edu/" },
+
+  // Amity University
+  { name:"Amity School of Liberal Arts", description:"UG Programs – Amity University", icon:"🏙️", link:"https://www.amity.edu/" }
+
+
   ]
 };
 
