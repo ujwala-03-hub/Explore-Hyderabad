@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyderabad Food - Explore Hyd</title>
+<style>
+  /* Reset */
+  * {margin:0; padding:0; box-sizing:border-box;}
+  body {font-family: Arial, sans-serif; background:#f5f5f5; color:#333;}
+
+  /* Navbar */
+  nav {
+    background:#0077cc;
+    color:#fff;
+    padding:1rem 2rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  nav h1 {font-size:1.5rem;}
+  nav ul {list-style:none; display:flex; gap:1rem;}
+  nav ul li a {color:#fff; text-decoration:none; font-weight:bold;}
+  nav ul li a:hover {text-decoration:underline;}
+
+  /* Hero Section */
+  .hero {
+    background:url('https://images.unsplash.com/photo-1627308595183-30c8e2b3e1b3?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    height:300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    text-shadow:2px 2px 6px #000;
+  }
+  .hero h2 {font-size:2.5rem; text-align:center;}
+
+  /* Container */
+  .container {max-width:1200px; margin:2rem auto; padding:0 1rem;}
+
+  /* Grid Cards */
+  .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem;}
+  .card {
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+  .card img {width:100%; height:200px; object-fit:cover;}
+  .card-content {padding:1rem;}
+  .card-content h3 {color:#d91067; margin-bottom:.5rem;}
+  .card-content p {font-size:.95rem; color:#555; margin-bottom:1rem;}
+  .card-content a {
+    display:inline-block;
+    background:#a30083a1;
+    color:#fff;
+    text-decoration:none;
+    padding:.5rem 1rem;
+    border-radius:6px;
+    font-weight:bold;
+  }
+  .card-content a:hover {background:#005fa3;}
+
+  /* Footer */
+  footer {
+    background:#0077cc;
+    color:#fff;
+    text-align:center;
+    padding:1.5rem;
+    margin-top:2rem;
+  }
+  body{
+    background-image: url("images/food.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <h1>Explore Hyd</h1>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="places.html">Places</a></li>
+    <li><a href="food.html">Food</a></li>
+    <li><a href="malls.html">Malls</a></li>
+    <li><a href="travel.html">Travel</a></li>
+    <li><a href="education.html">Education</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h2>Taste the Flavors of Hyderabad 🍛</h2>
+</section>
+
+<!-- Main Content -->
+<div class="container">
+  <div class="grid">
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Hyderabadi Biryani</h3>
+        <p>World-famous aromatic biryani cooked with flavorful spices and tender meat.</p>
+        <a href="https://en.wikipedia.org/wiki/Hyderabadi_biryani" target="_blank">View More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Irani Chai</h3>
+        <p>Rich and creamy tea served in old Irani cafés — Hyderabad’s cultural classic.</p>
+        <a href="https://en.wikipedia.org/wiki/Irani_caf%C3%A9" target="_blank">View More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Osmania Biscuits</h3>
+        <p>Soft, buttery biscuits — the perfect companion to Irani Chai.</p>
+        <a href="https://en.wikipedia.org/wiki/Osmania_biscuit" target="_blank">View More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Haleem</h3>
+        <p>Slow-cooked delicacy made from meat, wheat, and lentils — a Ramadan favorite.</p>
+        <a href="https://en.wikipedia.org/wiki/Haleem" target="_blank">View More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Double Ka Meetha</h3>
+        <p>A royal dessert made with bread, milk, ghee, and dry fruits.</p>
+        <a href="https://en.wikipedia.org/wiki/Double_ka_meetha" target="_blank">View More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Mirchi Bajji</h3>
+        <p>Spicy green chilies coated with gram flour — Hyderabad’s favorite street snack.</p>
+        <a href="https://en.wikipedia.org/wiki/Chili_pepper" target="_blank">View More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Qubani Ka Meetha</h3>
+        <p>Sweet made with dried apricots, served with cream or ice cream.</p>
+        <a href="https://en.wikipedia.org/wiki/Qubani_ka_meetha" target="_blank">View More</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-content">
+        <h3>Pathar Ka Gosht</h3>
+        <p>Succulent mutton pieces grilled on stone slabs, a true Nizami delight.</p>
+        <a href="https://en.wikipedia.org/wiki/Pathar_ka_Gosht" target="_blank">View More</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Explore Hyd | Designed with ❤ by Amena ujwala 
+</footer>
+
+</body>
+</html>
